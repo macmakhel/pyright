@@ -1,0 +1,45 @@
+def _init_(self):
+        self.username = None
+        self.logged_in = False
+
+    def register(self, username, password):
+        # Simulate registration process
+        time.sleep(1)
+        print(f"Successfully registered with username: {username}")
+        self.username = username
+        self.logged_in = True
+
+    def login(self, username, password):
+        # Simulate login process
+        time.sleep(1)
+        if self.username == username:
+            print(f"Welcome back, {username}!")
+            self.logged_in = True
+        else:
+            print("Invalid username or password.")
+
+    def logout(self):
+        # Simulate logout process
+        time.sleep(1)
+        self.logged_in = False
+        print("Logged out successfully.")
+
+    def earn_money(self):
+        # Placeholder for earning money methods
+        if self.logged_in:
+            print("Exploring money-making opportunities...")
+            time.sleep(2)
+            print("Money earned!")
+        else:
+            print("Please log in first to start earning money.")
+
+# Example usage:
+bot = AutoMoneyBot()
+
+bot.register("user123", "password123")
+bot.earn_money()
+
+bot.login("user123", "password123")
+bot.earn_money()
+
+bot.logout()
